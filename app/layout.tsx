@@ -1,15 +1,27 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),
-  title: "raiRabin | Free 1:1 Digital Marketing Consultation",
+  title: "raiRabin | FREE 1:1 Digital Marketing Consultation Call",
   description:
-    "Get a free 1:1 consultation call and customized digital marketing plan to help your business get more customers online.",
+    "Nepal-based business owners can book a FREE 1:1 digital marketing consultation call and get a customized plan to grow leads, customers, and sales.",
   openGraph: {
-    title: "raiRabin | Free 1:1 Digital Marketing Consultation",
+    title: "raiRabin | FREE 1:1 Digital Marketing Consultation Call",
     description:
-      "Free 1:1 consultation where we analyze your business and show what is stopping your growth and what to do next.",
+      "Struggling to grow your business? Book a FREE 1:1 Digital Marketing Consultation Call and get a customized plan you can use right away.",
     type: "website",
     images: [
       {
@@ -22,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "raiRabin | Free 1:1 Digital Marketing Consultation",
+    title: "raiRabin | FREE 1:1 Digital Marketing Consultation Call",
     description:
-      "Get a customized marketing plan for your business with a free 1:1 consultation call.",
+      "A conversion-focused consultation page for Nepal-based business owners who want more leads, customers, and sales.",
     images: ["/rairabin_logo_new.png"],
   },
 };
@@ -36,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${manrope.variable} ${cormorant.variable}`}>{children}</body>
     </html>
   );
 }

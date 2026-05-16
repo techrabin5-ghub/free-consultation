@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f8ff;
+  --background: #f4f7fc;
   --surface: #ffffff;
-  --surface-soft: #edf4ff;
-  --foreground: #102a5c;
-  --foreground-soft: #4d648f;
-  --border: rgba(16, 42, 92, 0.12);
+  --surface-soft: #eef3fb;
+  --surface-tint: #fbfcff;
+  --foreground: #10285e;
+  --foreground-soft: #58719a;
+  --border: rgba(16, 42, 92, 0.1);
+  --border-strong: rgba(47, 99, 211, 0.18);
   --primary: #2f63d3;
   --primary-dark: #16366f;
-  --accent: #5f8eff;
-  --shadow: 0 20px 60px rgba(22, 54, 111, 0.12);
+  --primary-ink: #0d2452;
+  --accent: #5b8cff;
+  --shadow: 0 20px 48px rgba(22, 54, 111, 0.08);
+  --shadow-strong: 0 30px 80px rgba(22, 54, 111, 0.13);
 }
 
 * {
@@ -25,10 +29,12 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(95, 142, 255, 0.2), transparent 28%),
-    linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+    radial-gradient(circle at 12% 10%, rgba(95, 142, 255, 0.18), transparent 22%),
+    radial-gradient(circle at 86% 16%, rgba(47, 99, 211, 0.12), transparent 20%),
+    linear-gradient(180deg, #fcfdff 0%, #f3f7fd 42%, #f7faff 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -36,9 +42,210 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+  letter-spacing: -0.03em;
+}
+
 input,
 textarea {
   font: inherit;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 * {
+  box-sizing: border-box;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__container {
+  max-width: none !important;
+  background: transparent !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__wrapper {
+  display: block;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__form {
+  width: 100%;
+  margin: 0;
+  padding: 0 !important;
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif !important;
+  text-align: center;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__title {
+  color: var(--primary-ink) !important;
+  display: block;
+  margin: 0 0 1rem;
+  font-family: var(--font-display), Georgia, serif !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-weight: 600 !important;
+  line-height: 0.98 !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__subtitle {
+  color: var(--foreground-soft) !important;
+  display: block;
+  margin: 0 0 1.75rem;
+  font-size: 1rem !important;
+  line-height: 1.9 !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__fields {
+  margin-bottom: 1rem;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .fd-form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.flodesk-shell .flodesk-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .flodesk-shell .flodesk-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .flodesk-shell .flodesk-full {
+    grid-column: 1 / -1;
+  }
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__field {
+  display: block;
+  position: relative;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .fd-form-control {
+  width: 100%;
+  outline: none;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__control {
+  height: 3.5rem !important;
+  border: 1px solid rgba(16, 42, 92, 0.1) !important;
+  border-radius: 1rem !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  padding: 0.95rem 1.1rem !important;
+  color: var(--foreground) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.4 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 8px 20px rgba(22, 54, 111, 0.03);
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__control::placeholder {
+  color: rgba(80, 104, 143, 0.72) !important;
+  opacity: 1 !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__control:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(47, 99, 211, 0.12), 0 14px 34px rgba(47, 99, 211, 0.08) !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__label {
+  position: static !important;
+  display: block !important;
+  color: var(--foreground) !important;
+  border: none !important;
+  margin-bottom: 0.55rem !important;
+  padding: 0 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+  white-space: normal !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__footer {
+  order: 3;
+  text-align: center;
+  margin-top: 0.15rem;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .fd-form-captcha {
+  position: static !important;
+  order: 2;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1.35rem;
+  padding: 0.35rem 0 0.1rem;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .fd-has-captcha .fd-form-content > *:not(.fd-form-captcha) {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__button {
+  min-height: 3.5rem;
+  width: 100%;
+  border: none !important;
+  border-radius: 9999px !important;
+  background: linear-gradient(135deg, #2f63d3, #214b9f) !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  box-shadow: 0 22px 44px rgba(47, 99, 211, 0.28) !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__button:hover {
+  background: var(--primary-dark) !important;
+  transform: translateY(-2px);
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__error {
+  margin-top: 1rem;
+  color: #c84e41;
+  text-align: left;
+}
+
+.flodesk-shell .flodesk-inline-error {
+  margin-top: 0.45rem;
+  color: #c84e41;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .fd-form-feedback {
+  display: none !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .fd-form-group.fd-has-error .ff-6a018f4e10ef8af70c7e82b9__control {
+  border-color: #c84e41 !important;
+  box-shadow: 0 0 0 3px rgba(200, 78, 65, 0.12) !important;
+}
+
+.flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__success {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .flodesk-shell [data-ff-el="root"].ff-6a018f4e10ef8af70c7e82b9 .ff-6a018f4e10ef8af70c7e82b9__subtitle {
+    font-size: 0.98rem !important;
+  }
 }
 
 ::selection {

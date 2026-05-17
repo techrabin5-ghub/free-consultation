@@ -20,15 +20,13 @@ export default function ThanksPage() {
         </div>
 
         <div className="mt-10 rounded-[2.8rem] border border-white/75 bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(248,251,255,0.97))] p-8 shadow-[var(--shadow-strong)] sm:p-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--primary)]">
-              You are in
+          <div className="mx-auto max-w-5xl text-center">
+            <p className="text-base font-semibold tracking-[0.01em] text-[var(--primary)] sm:text-lg">
+              Thank You! Your request has been successfully submitted.
             </p>
-            <h1 className="font-display mt-4 text-5xl leading-[0.96] text-[var(--primary-ink)] sm:text-6xl">
-              Wait... watch the video before you go
-            </h1>
-            <p className="mt-5 text-base leading-8 text-[var(--foreground-soft)] sm:text-lg">
-              Before your consultation, please watch this short video so you know what to do next.
+            <p className="mt-4 text-2xl leading-10 text-[var(--primary-ink)] sm:text-[1.75rem] sm:leading-[2.9rem]">
+              Wait... Please watch this short video before your consultation so you know what to do
+              next.
             </p>
           </div>
 
@@ -53,7 +51,7 @@ export default function ThanksPage() {
               href="https://wa.me/9779714107055"
               target="_blank"
               rel="noreferrer"
-              className="mt-5 inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--primary)] px-8 text-base font-semibold text-white shadow-[0_18px_36px_rgba(47,99,211,0.18)] transition hover:bg-[var(--primary-dark)]"
+              className="mt-5 inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--primary)] px-8 text-base font-semibold !text-white shadow-[0_18px_36px_rgba(47,99,211,0.18)] transition hover:bg-[var(--primary-dark)] hover:!text-white visited:!text-white"
             >
               Chat with me on WhatsApp
             </a>

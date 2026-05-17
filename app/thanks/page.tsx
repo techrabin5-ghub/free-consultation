@@ -34,31 +34,29 @@ export default function ThanksPage() {
 
           <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-[2.2rem] border border-[var(--border)] bg-[linear-gradient(180deg,#fbfdff,#eef4ff)] shadow-[0_20px_40px_rgba(22,54,111,0.08)]">
             <div className="aspect-video w-full">
-              <div className="flex h-full items-center justify-center px-6 text-center">
-                <div>
-                  <p className="text-lg font-semibold text-[var(--foreground)]">
-                    Vimeo video will be added here
-                  </p>
-                  <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--foreground-soft)] sm:text-base">
-                    Send your Vimeo link later and this placeholder will be replaced with the live
-                    embedded video on the thank-you page.
-                  </p>
-                </div>
-              </div>
+              <iframe
+                src="https://player.vimeo.com/video/1192929888"
+                title="Consultation thank you video"
+                className="h-full w-full"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                allowFullScreen
+              />
             </div>
           </div>
 
           <div className="mx-auto mt-10 max-w-3xl rounded-[2rem] border border-[rgba(47,99,211,0.1)] bg-[linear-gradient(180deg,#f5f8ff,#edf3ff)] p-6 text-center shadow-[0_14px_28px_rgba(22,54,111,0.06)]">
             <p className="text-sm leading-7 text-[var(--foreground-soft)]">
-              Your WhatsApp chat button is ready to be connected as soon as you send the link.
+              If you have any questions before the consultation, you can message directly on
+              WhatsApp.
             </p>
-            <button
-              type="button"
-              disabled
-              className="mt-5 inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--primary)] px-8 text-base font-semibold text-white opacity-70"
+            <a
+              href="https://wa.me/9779714107055"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex min-h-14 items-center justify-center rounded-full bg-[var(--primary)] px-8 text-base font-semibold text-white shadow-[0_18px_36px_rgba(47,99,211,0.18)] transition hover:bg-[var(--primary-dark)]"
             >
               Chat with me on WhatsApp
-            </button>
+            </a>
           </div>
 
           <div className="mt-8 text-center">

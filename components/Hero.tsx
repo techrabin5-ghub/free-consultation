@@ -119,9 +119,9 @@ export default function Hero() {
               {featureCards.map((card, index) => (
                 <div
                   key={card.title}
-                  className="rounded-[1.9rem] border border-[rgba(47,99,211,0.08)] bg-white/88 px-5 py-6 shadow-[0_16px_32px_rgba(22,54,111,0.05)] backdrop-blur"
+                  className="rounded-[1.9rem] border border-[rgba(47,99,211,0.08)] bg-white/88 px-5 py-6 text-center shadow-[0_16px_32px_rgba(22,54,111,0.05)] backdrop-blur"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[linear-gradient(135deg,#edf3ff,#ffffff)] text-sm font-bold text-[var(--primary)] shadow-[inset_0_0_0_1px_rgba(47,99,211,0.1)]">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#16366f,#2f63d3)] text-sm font-bold text-white shadow-[0_14px_30px_rgba(22,54,111,0.2)]">
                     {index + 1}
                   </div>
                   <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--primary)]">

@@ -24,8 +24,8 @@ export default function Hero() {
 
       <div className="mx-auto max-w-6xl">
         <div className="rounded-[1.75rem] border border-[rgba(47,99,211,0.08)] bg-white px-4 py-4 shadow-[0_14px_30px_rgba(22,54,111,0.05)] sm:px-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="inline-flex items-center">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="inline-flex items-center sm:self-auto">
               <Image
                 src="/rairabin_logo_new.png"
                 alt="raiRabin Digital Marketing Expert"

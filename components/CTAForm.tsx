@@ -1,15 +1,16 @@
 "use client";
 
 import Script from "next/script";
-import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 
+const ROOT_CLASS = "ff-6a157113cbe18ff75560ffb4";
+const FORM_ID = "6a157113cbe18ff75560ffb4";
+
 export default function CTAForm() {
-  const router = useRouter();
   const redirectedRef = useRef(false);
 
   useEffect(() => {
-    const root = document.querySelector<HTMLElement>(".ff-6a018f4e10ef8af70c7e82b9");
+    const root = document.querySelector<HTMLElement>(`.${ROOT_CLASS}`);
     if (!root) {
       return;
     }
@@ -48,6 +49,7 @@ export default function CTAForm() {
       moveCaptchaAboveButton();
       handleSuccess();
     });
+
     observer.observe(root, {
       childList: true,
       subtree: true,
@@ -55,9 +57,7 @@ export default function CTAForm() {
       attributeFilter: ["data-ff-stage"],
     });
 
-    const fields = Array.from(
-      root.querySelectorAll<HTMLInputElement>(".ff-6a018f4e10ef8af70c7e82b9__control"),
-    );
+    const fields = Array.from(root.querySelectorAll<HTMLInputElement>(`.${ROOT_CLASS}__control`));
 
     const showError = (field: HTMLInputElement) => {
       const group = field.closest(".fd-form-group");
@@ -87,6 +87,7 @@ export default function CTAForm() {
       if (!group) {
         return;
       }
+
       const feedback = group.querySelector<HTMLElement>(".flodesk-inline-error");
       if (field.checkValidity()) {
         if (feedback) {
@@ -119,7 +120,7 @@ export default function CTAForm() {
         field.removeEventListener("blur", onBlur);
       });
     };
-  }, [router]);
+  }, []);
 
   return (
     <section id="lead-form" className="px-6 py-18 sm:px-8 lg:px-12">
@@ -150,8 +151,8 @@ export default function CTAForm() {
 
       <Script id="flodesk-form-handle" strategy="afterInteractive">
         {`window.fd('form:handle', {
-  formId: '6a018f4e10ef8af70c7e82b9',
-  rootEl: '.ff-6a018f4e10ef8af70c7e82b9',
+  formId: '${FORM_ID}',
+  rootEl: '.${ROOT_CLASS}',
 });`}
       </Script>
 
@@ -170,7 +171,7 @@ export default function CTAForm() {
 
         <div className="flodesk-shell mt-10 rounded-[2.6rem] border border-white/75 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,251,255,0.98))] p-4 shadow-[var(--shadow-strong)] sm:p-6 lg:p-8">
           <div
-            className="ff-6a018f4e10ef8af70c7e82b9"
+            className={ROOT_CLASS}
             data-ff-el="root"
             data-ff-version="3"
             data-ff-type="inline"
@@ -179,32 +180,32 @@ export default function CTAForm() {
           >
             <div
               data-ff-el="config"
-              data-ff-config="eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJtZXNzYWdlIiwibWVzc2FnZSI6IiIsInJlZGlyZWN0VXJsIjoiIn0sImNvaSI6ZmFsc2UsInNob3dGb3JSZXR1cm5WaXNpdG9ycyI6dHJ1ZSwibm90aWZpY2F0aW9uIjpmYWxzZSwiZ2RwciI6eyJhY2NlcHRzTWFya2V0aW5nIjpmYWxzZSwicHJpdmFjeVBvbGljeSI6eyJlbmFibGVkIjpmYWxzZSwibWFuZGF0b3J5IjpmYWxzZX19LCJ0cmFja2luZ0NvbmZpZyI6eyJtZXRhUGl4ZWxJZCI6IiIsImNvb2tpZUJhbm5lckVuYWJsZWQiOmZhbHNlLCJnb29nbGVBbmFseXRpY3NJZCI6IiJ9fQ=="
+              data-ff-config="eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJtZXNzYWdlIiwibWVzc2FnZSI6IjxkaXYgZGF0YS1wYXJhZ3JhcGg9XCJ0cnVlXCI+R290IGl0ISBDaGVjayB5b3VyIGluYm94IGZvciBhbiBlbWFpbCB0byBjb25maXJtIHlvdXIgc3Vic2NyaXB0aW9uLjwvZGl2PiIsInJlZGlyZWN0VXJsIjoiIn0sImNvaSI6dHJ1ZSwic2hvd0ZvclJldHVyblZpc2l0b3JzIjp0cnVlLCJub3RpZmljYXRpb24iOmZhbHNlLCJnZHByIjp7ImFjY2VwdHNNYXJrZXRpbmciOmZhbHNlLCJwcml2YWN5UG9saWN5Ijp7ImVuYWJsZWQiOmZhbHNlLCJtYW5kYXRvcnkiOmZhbHNlfX0sInRyYWNraW5nQ29uZmlnIjp7Im1ldGFQaXhlbElkIjoiIiwiY29va2llQmFubmVyRW5hYmxlZCI6ZmFsc2UsImdvb2dsZUFuYWx5dGljc0lkIjoiIn19"
               style={{ display: "none" }}
             />
 
-            <div className="ff-6a018f4e10ef8af70c7e82b9__container">
-              <div className="ff-6a018f4e10ef8af70c7e82b9__wrapper">
+            <div className={`${ROOT_CLASS}__container`}>
+              <div className={`${ROOT_CLASS}__wrapper`}>
                 <form
-                  className="ff-6a018f4e10ef8af70c7e82b9__form"
-                  action="https://form.flodesk.com/forms/6a018f4e10ef8af70c7e82b9/submit"
+                  className={`${ROOT_CLASS}__form`}
+                  action={`https://form.flodesk.com/forms/${FORM_ID}/submit`}
                   method="post"
                   data-ff-el="form"
                 >
-                  <div className="ff-6a018f4e10ef8af70c7e82b9__content fd-form-content" data-ff-el="content">
-                    <div className="ff-6a018f4e10ef8af70c7e82b9__fields flodesk-grid" data-ff-el="fields">
-                      <div className="ff-6a018f4e10ef8af70c7e82b9__field fd-form-group">
+                  <div className={`${ROOT_CLASS}__content fd-form-content`} data-ff-el="content">
+                    <div className={`${ROOT_CLASS}__fields flodesk-grid`} data-ff-el="fields">
+                      <div className={`${ROOT_CLASS}__field fd-form-group`}>
                         <label
-                          htmlFor="ff-6a018f4e10ef8af70c7e82b9-firstName"
-                          className="ff-6a018f4e10ef8af70c7e82b9__label fd-form-label"
+                          htmlFor={`${ROOT_CLASS}-firstName`}
+                          className={`${ROOT_CLASS}__label fd-form-label`}
                         >
                           <div>
                             <div>Full Name *</div>
                           </div>
                         </label>
                         <input
-                          id="ff-6a018f4e10ef8af70c7e82b9-firstName"
-                          className="ff-6a018f4e10ef8af70c7e82b9__control fd-form-control"
+                          id={`${ROOT_CLASS}-firstName`}
+                          className={`${ROOT_CLASS}__control fd-form-control`}
                           type="text"
                           maxLength={255}
                           name="firstName"
@@ -214,18 +215,18 @@ export default function CTAForm() {
                         />
                       </div>
 
-                      <div className="ff-6a018f4e10ef8af70c7e82b9__field fd-form-group">
+                      <div className={`${ROOT_CLASS}__field fd-form-group`}>
                         <label
-                          htmlFor="ff-6a018f4e10ef8af70c7e82b9-email"
-                          className="ff-6a018f4e10ef8af70c7e82b9__label fd-form-label"
+                          htmlFor={`${ROOT_CLASS}-email`}
+                          className={`${ROOT_CLASS}__label fd-form-label`}
                         >
                           <div>
                             <div>Email *</div>
                           </div>
                         </label>
                         <input
-                          id="ff-6a018f4e10ef8af70c7e82b9-email"
-                          className="ff-6a018f4e10ef8af70c7e82b9__control fd-form-control"
+                          id={`${ROOT_CLASS}-email`}
+                          className={`${ROOT_CLASS}__control fd-form-control`}
                           type="text"
                           maxLength={255}
                           name="email"
@@ -235,39 +236,39 @@ export default function CTAForm() {
                         />
                       </div>
 
-                      <div className="ff-6a018f4e10ef8af70c7e82b9__field fd-form-group">
+                      <div className={`${ROOT_CLASS}__field fd-form-group`}>
                         <label
-                          htmlFor="ff-6a018f4e10ef8af70c7e82b9-KkCt02tizA"
-                          className="ff-6a018f4e10ef8af70c7e82b9__label fd-form-label"
+                          htmlFor={`${ROOT_CLASS}-SblvkmMwMo`}
+                          className={`${ROOT_CLASS}__label fd-form-label`}
                         >
                           <div>
                             <div>Business Name *</div>
                           </div>
                         </label>
                         <input
-                          id="ff-6a018f4e10ef8af70c7e82b9-KkCt02tizA"
-                          className="ff-6a018f4e10ef8af70c7e82b9__control fd-form-control"
+                          id={`${ROOT_CLASS}-SblvkmMwMo`}
+                          className={`${ROOT_CLASS}__control fd-form-control`}
                           type="text"
                           maxLength={255}
                           name="fields.businessName"
                           placeholder="Business Name"
-                          data-ff-tab="fields.businessName:email:fields.whatsappNumberPageLink"
+                          data-ff-tab="fields.businessName:email:fields.whatsappNumber"
                           required
                         />
                       </div>
 
-                      <div className="ff-6a018f4e10ef8af70c7e82b9__field fd-form-group">
+                      <div className={`${ROOT_CLASS}__field fd-form-group`}>
                         <label
-                          htmlFor="ff-6a018f4e10ef8af70c7e82b9-a6Qwg3whUl"
-                          className="ff-6a018f4e10ef8af70c7e82b9__label fd-form-label"
+                          htmlFor={`${ROOT_CLASS}-YYbCCEa7l7`}
+                          className={`${ROOT_CLASS}__label fd-form-label`}
                         >
                           <div>
                             <div>WhatsApp Number *</div>
                           </div>
                         </label>
                         <input
-                          id="ff-6a018f4e10ef8af70c7e82b9-a6Qwg3whUl"
-                          className="ff-6a018f4e10ef8af70c7e82b9__control fd-form-control"
+                          id={`${ROOT_CLASS}-YYbCCEa7l7`}
+                          className={`${ROOT_CLASS}__control fd-form-control`}
                           type="text"
                           maxLength={255}
                           name="fields.whatsappNumber"
@@ -277,18 +278,18 @@ export default function CTAForm() {
                         />
                       </div>
 
-                      <div className="ff-6a018f4e10ef8af70c7e82b9__field fd-form-group">
+                      <div className={`${ROOT_CLASS}__field fd-form-group`}>
                         <label
-                          htmlFor="ff-6a018f4e10ef8af70c7e82b9-UykjiEdNoC"
-                          className="ff-6a018f4e10ef8af70c7e82b9__label fd-form-label"
+                          htmlFor={`${ROOT_CLASS}-y3Lzd1se0S`}
+                          className={`${ROOT_CLASS}__label fd-form-label`}
                         >
                           <div>
                             <div>Website or Facebook Page link</div>
                           </div>
                         </label>
                         <input
-                          id="ff-6a018f4e10ef8af70c7e82b9-UykjiEdNoC"
-                          className="ff-6a018f4e10ef8af70c7e82b9__control fd-form-control"
+                          id={`${ROOT_CLASS}-y3Lzd1se0S`}
+                          className={`${ROOT_CLASS}__control fd-form-control`}
                           type="text"
                           maxLength={255}
                           name="fields.websiteOrFacebookPageLink"
@@ -297,18 +298,18 @@ export default function CTAForm() {
                         />
                       </div>
 
-                      <div className="ff-6a018f4e10ef8af70c7e82b9__field fd-form-group flodesk-full">
+                      <div className={`${ROOT_CLASS}__field fd-form-group flodesk-full`}>
                         <label
-                          htmlFor="ff-6a018f4e10ef8af70c7e82b9-qjhp1kG1XW"
-                          className="ff-6a018f4e10ef8af70c7e82b9__label fd-form-label"
+                          htmlFor={`${ROOT_CLASS}-pP1oedpgI5`}
+                          className={`${ROOT_CLASS}__label fd-form-label`}
                         >
                           <div>
                             <div>Message for Us *</div>
                           </div>
                         </label>
                         <input
-                          id="ff-6a018f4e10ef8af70c7e82b9-qjhp1kG1XW"
-                          className="ff-6a018f4e10ef8af70c7e82b9__control fd-form-control"
+                          id={`${ROOT_CLASS}-pP1oedpgI5`}
+                          className={`${ROOT_CLASS}__control fd-form-control`}
                           type="text"
                           maxLength={255}
                           name="fields.messageForUs"
@@ -318,13 +319,18 @@ export default function CTAForm() {
                         />
                       </div>
 
-                      <input type="text" maxLength={255} name="confirm_email_address" style={{ display: "none" }} />
+                      <input
+                        type="text"
+                        maxLength={255}
+                        name="confirm_email_address"
+                        style={{ display: "none" }}
+                      />
                     </div>
 
-                    <div className="ff-6a018f4e10ef8af70c7e82b9__footer" data-ff-el="footer">
+                    <div className={`${ROOT_CLASS}__footer`} data-ff-el="footer">
                       <button
                         type="submit"
-                        className="ff-6a018f4e10ef8af70c7e82b9__button fd-btn"
+                        className={`${ROOT_CLASS}__button fd-btn`}
                         data-ff-el="submit"
                         data-ff-tab="submit"
                       >
@@ -335,9 +341,9 @@ export default function CTAForm() {
                     </div>
                   </div>
 
-                  <div className="ff-6a018f4e10ef8af70c7e82b9__success fd-form-success" data-ff-el="success" />
+                  <div className={`${ROOT_CLASS}__success fd-form-success`} data-ff-el="success" />
 
-                  <div className="ff-6a018f4e10ef8af70c7e82b9__error fd-form-error" data-ff-el="error" />
+                  <div className={`${ROOT_CLASS}__error fd-form-error`} data-ff-el="error" />
                 </form>
               </div>
             </div>

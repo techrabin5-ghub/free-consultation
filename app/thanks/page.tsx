@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import VimeoPlayer from "@/components/VimeoPlayer";
 
 export default function ThanksPage() {
   return (
@@ -30,15 +31,9 @@ export default function ThanksPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-[2.2rem] border border-[var(--border)] bg-[linear-gradient(180deg,#fbfdff,#eef4ff)] shadow-[0_20px_40px_rgba(22,54,111,0.08)]">
-            <div className="aspect-video w-full">
-              <iframe
-                src="https://player.vimeo.com/video/1192929888"
-                title="Consultation thank you video"
-                className="h-full w-full"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                allowFullScreen
-              />
+          <div className="mx-auto mt-10 max-w-4xl rounded-[2.4rem] border border-[var(--border)] bg-[linear-gradient(180deg,#fbfdff,#edf4ff)] p-3 shadow-[0_22px_44px_rgba(22,54,111,0.08)]">
+            <div className="overflow-hidden rounded-[1.8rem] bg-[linear-gradient(180deg,#f6f9ff,#eaf1ff)]">
+              <VimeoPlayer videoId="1192929888" title="Consultation thank you video" />
             </div>
           </div>
 

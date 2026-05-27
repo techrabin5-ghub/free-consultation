@@ -109,8 +109,10 @@ export default function Hero() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 inline-flex rounded-full border border-[rgba(47,99,211,0.12)] bg-[rgba(47,99,211,0.08)] px-4 py-2 text-sm font-semibold text-[var(--primary-dark)]">
-                  FREE 1:1 Session
+                <div className="mt-6 flex justify-center">
+                  <div className="inline-flex rounded-full border border-[rgba(47,99,211,0.12)] bg-[rgba(47,99,211,0.08)] px-4 py-2 text-sm font-semibold text-[var(--primary-dark)]">
+                    FREE 1:1 Session
+                  </div>
                 </div>
               </div>
             </div>

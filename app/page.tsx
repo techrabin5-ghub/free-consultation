@@ -12,6 +12,9 @@ export default function Home() {
       <ConsultationProcess />
       <FAQ />
       <CTAForm />
+      <div className="px-6 pt-4 text-center sm:px-8 lg:px-12">
+        <p className="text-sm text-[var(--foreground-soft)]">© 2026 raiRabin.com.np</p>
+      </div>
     </main>
   );
 }

@@ -38,7 +38,7 @@ export default function ThanksPage() {
           </div>
 
           <div className="mx-auto mt-10 max-w-3xl rounded-[2rem] border border-[rgba(47,99,211,0.1)] bg-[linear-gradient(180deg,#f5f8ff,#edf3ff)] p-6 text-center shadow-[0_14px_28px_rgba(22,54,111,0.06)]">
-            <p className="text-sm leading-7 text-[var(--foreground-soft)]">
+            <p className="text-base leading-8 text-[var(--foreground-soft)]">
               If you have any questions before the consultation, you can message directly on
               WhatsApp.
             </p>
@@ -55,10 +55,14 @@ export default function ThanksPage() {
           <div className="mt-8 text-center">
             <Link
               href="/"
-              className="text-sm font-semibold text-[var(--primary)] transition hover:text-[var(--primary-dark)]"
+              className="text-base font-bold text-[var(--primary)] transition hover:text-[var(--primary-dark)]"
             >
-              Back to the landing page
+              Go Back To The Landing Page
             </Link>
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-[var(--foreground-soft)]">© 2026 raiRabin.com.np</p>
           </div>
         </div>
       </div>

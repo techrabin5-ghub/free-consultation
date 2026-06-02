@@ -33,7 +33,7 @@ export default function ThanksPage() {
 
           <div className="mx-auto mt-10 max-w-4xl rounded-[2.4rem] border border-[var(--border)] bg-[linear-gradient(180deg,#fbfdff,#edf4ff)] p-3 shadow-[0_22px_44px_rgba(22,54,111,0.08)]">
             <div className="overflow-hidden rounded-[1.8rem] bg-[linear-gradient(180deg,#f6f9ff,#eaf1ff)]">
-              <VimeoPlayer videoId="1192929888" title="Consultation thank you video" />
+              <VimeoPlayer videoId="1197661475" title="Consultation thank you video" />
             </div>
           </div>
 

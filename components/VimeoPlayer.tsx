@@ -28,6 +28,21 @@ export default function VimeoPlayer({ videoId, title }: VimeoPlayerProps) {
   const [isReady, setIsReady] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const updateTouchState = () => setIsTouchDevice(mediaQuery.matches);
+
+    updateTouchState();
+    mediaQuery.addEventListener("change", updateTouchState);
+
+    return () => mediaQuery.removeEventListener("change", updateTouchState);
+  }, []);
 
   useEffect(() => {
     if (!isReady || !iframeRef.current || !window.Vimeo || playerRef.current) {
@@ -55,7 +70,7 @@ export default function VimeoPlayer({ videoId, title }: VimeoPlayerProps) {
     await playerRef.current.play();
   };
 
-  const showOverlay = !isPlaying || isHovered;
+  const showOverlay = !isPlaying || (!isTouchDevice && isHovered);
 
   return (
     <>
@@ -96,6 +111,15 @@ export default function VimeoPlayer({ videoId, title }: VimeoPlayerProps) {
             <span className="ml-1 block h-0 w-0 border-y-[12px] border-y-transparent border-l-[20px] border-l-white" />
           )}
         </button>
+
+        {isPlaying && isTouchDevice ? (
+          <button
+            type="button"
+            aria-label="Pause video"
+            onClick={togglePlayback}
+            className="absolute inset-0 z-10 bg-transparent"
+          />
+        ) : null}
       </div>
     </>
   );
